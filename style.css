@@ -1,0 +1,110 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: 0;
+}
+:root {
+     --bg: hsl(185, 75%, 39%);
+     --primary-font-clr: hsl(229, 23%, 2);
+     --accent-font-clr: hsl(227, 10%, 46%);
+     --line-clr: hsla(0, 0%, 59%, 0.541);
+}
+body {
+     font-family: "Kumbh Sans", sans-serif;
+     min-height: 100vh;
+     padding: 1.5rem;
+     text-align: center;
+     background: var(--bg);
+     display: grid;
+     place-content: center;
+     overflow: hidden;
+}
+.circle-top {
+     position: absolute;
+     width: 100%;
+     aspect-ratio: 1;
+     left: -50%;
+     top: -30%;
+     rotate: -30deg;
+}
+.circle-bottom {
+     position: absolute;
+     width: 100%;
+     aspect-ratio: 1;
+     bottom: -20%;
+     right: -50%;
+}
+.card {
+     position: relative;
+     background-color: #fff;
+     border-radius: 15px;
+     overflow: hidden;
+     margin-inline: auto;
+     min-width: 350px;
+     isolation: isolate;
+}
+@media (min-width: 800px) {
+     .card {
+          min-width: 390px;
+     }
+     .circle-top {
+          width: 90%;
+          top: -110%;
+          left: -45%;
+     }
+     .circle-bottom{
+          width: 70%;
+          bottom: -110%;
+          right: -20%;
+     }
+}
+.card::before {
+     position: absolute;
+     content: "";
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 8rem;
+     background: url(images/bg-pattern-card.svg);
+     z-index: -1;
+}
+.card_img {
+     display: block;
+     border-radius: 100px;
+     border: 5px solid #fff;
+     margin-top: 5rem;
+     margin-inline: auto;
+}
+.card_person_wrapper {
+     margin-top: 1rem;
+     margin-bottom: 1rem;
+     padding-bottom: 1.5rem;
+     border-bottom: 1px solid var(--line-clr);
+}
+.name {
+     font-size: 18px;
+     color: var(--primary-font-clr);
+     margin-bottom: 0.5rem;
+}
+.age {
+     color: var(--accent-font-clr);
+     font-weight: 400;
+}
+.city {
+     color: var(--accent-font-clr);
+}
+.statistics {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     padding-bottom: 1.2rem;
+}
+.amount {
+     font-size: 18px;
+     color: var(--primary-font-clr);
+}
+.amount_text {
+     font-size: 10px;
+     color: var(--accent-font-clr);
+     letter-spacing: 1px;
+}
